@@ -97,7 +97,7 @@ Handles capturing and processing audio input. It uses the `SpeechRecognition` li
 
 #### `utils/text_processing.py`
 
-Processes the text input using GPT-4o. It combines the initial instructions with relevant past conversations retrieved from memory to generate contextually relevant responses.
+Processes the text input using GPT-4o.
 
 #### `utils/text_to_speech.py`
 
