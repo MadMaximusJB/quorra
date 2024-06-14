@@ -1,0 +1,5 @@
+openai==1.2.0
+google-cloud-texttospeech
+SpeechRecognition==3.8.1
+keyboard==0.13.5
+setuptools
