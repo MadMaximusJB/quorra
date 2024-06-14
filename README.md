@@ -97,11 +97,11 @@ Handles capturing and processing audio input. It uses the `SpeechRecognition` li
 
 #### `utils/text_processing.py`
 
-Processes the text input using GPT-4o.
+Processes the text input using GPT-4o. *Note: To change initial prompt, edit within this file.*
 
 #### `utils/text_to_speech.py`
 
-Converts the text response from GPT-4o to speech using Google Cloud Text-to-Speech. It supports custom voices by specifying a voice ID.
+Converts the text response from GPT-4o to speech using Google Cloud Text-to-Speech.
 
 ### Contributing
 
