@@ -1,13 +1,14 @@
 from openai import OpenAI
 from config import OPENAI_API_KEY
 
-def process_text_with_gpt4o(text):
+def process_text_with_gpt4o(user_input, conversation_history):
     try:
         ## Set the API key
         client = OpenAI(api_key=OPENAI_API_KEY)
         
-        # Combine the initial instructions with the user input
-        prompt = text 
+        # Combine the initial instructions with the conversation history and user input
+        history_prompt = "\n".join(conversation_history)
+        prompt = f"{history_prompt}\nUser: {user_input}\nAssistant:"
         
         MODEL="gpt-4o"
 
