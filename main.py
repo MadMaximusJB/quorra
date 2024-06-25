@@ -1,6 +1,7 @@
 from utils.audio_input import get_audio_input
-from utils.text_processing import process_text_with_gpt4o
+from utils.text_processing import process_text_with_gpt4o, summarize_text_with_gpt4o
 from utils.text_to_speech import text_to_speech_with_google
+from utils.web_search import search_web
 from config import DEFAULT_VOICE_NAME
 import keyboard
 
@@ -12,7 +13,14 @@ def main(voice_name=DEFAULT_VOICE_NAME):
         
         if user_input:
             conversation_history.append(f"User: {user_input}")
-            response_text = process_text_with_gpt4o(user_input, conversation_history)
+            
+            if "search" in user_input.lower():
+                search_query = user_input.lower().replace("search", "").strip()
+                search_results = search_web(search_query)
+                summarized_results = summarize_text_with_gpt4o(search_results)
+                response_text = summarized_results
+            else:
+                response_text = process_text_with_gpt4o(user_input, conversation_history)
             
             if response_text:
                 conversation_history.append(f"Quorra: {response_text}")
