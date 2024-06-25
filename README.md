@@ -8,12 +8,15 @@ This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-S
 - Text processing using GPT-4o
 - Text-to-speech using Google Cloud Text-to-Speech (is currently free if you use Journey voices)
 - Immediate conversation history
+- Internet search capability
 
 ### Prerequisites
 
 - Python 3.7 or higher
 - An OpenAI API key
 - A Google Cloud Text-to-Speech API key
+- A Google Custom Search Engine API key (from the Google Cloud Console)
+- A Google Custom Search Engine ID (from the Google Programmable Search site)
 
 ### Installation
 
@@ -50,6 +53,8 @@ This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-S
     GOOGLE_APPLICATION_CREDENTIALS = 'path/to/your/credentials.json'
     DEFAULT_VOICE_NAME = 'en-US-Wavenet-D'  # Replace with your desired voice
     DEFAULT_AUDIO_ENCODING = 'LINEAR16'  # Use LINEAR16 for streaming audio
+    GOOGLE_CSE_API_KEY = 'YOUR_CSE_API_KEY'
+    GOOGLE_CSE_ID = 'YOUR_CSE_ID
     ```
 
 ### Usage
@@ -57,7 +62,7 @@ This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-S
 1. **Run the voice assistant:**
 
     ```bash
-    python main.py
+    python main.py # Note that you have to be in the venv to use the assistant if you created one
     ```
 
 2. **Interact with the assistant:**
@@ -65,6 +70,7 @@ This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-S
     - Press and hold `F9` to start listening.
     - Speak your query clearly into the microphone.
     - Release `F9` to process your input and get a response.
+    - Use the word "search" at the beginning of your query to have Quorra search the web
 
 ### Project Structure
 
