@@ -54,7 +54,7 @@ This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-S
     DEFAULT_VOICE_NAME = 'en-US-Wavenet-D'  # Replace with your desired voice
     DEFAULT_AUDIO_ENCODING = 'LINEAR16'  # Use LINEAR16 for streaming audio
     GOOGLE_CSE_API_KEY = 'YOUR_CSE_API_KEY'
-    GOOGLE_CSE_ID = 'YOUR_CSE_ID
+    GOOGLE_CSE_ID = 'YOUR_CSE_ID'
     ```
 
 ### Usage
