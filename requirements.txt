@@ -4,3 +4,4 @@ SpeechRecognition==3.8.1
 keyboard==0.13.5
 setuptools
 requests
+Pillow
