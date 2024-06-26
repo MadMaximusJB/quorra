@@ -2,7 +2,6 @@ import os
 from google.cloud import texttospeech
 import pyaudio
 from config import GOOGLE_APPLICATION_CREDENTIALS, DEFAULT_VOICE_NAME, DEFAULT_AUDIO_ENCODING
-import keyboard
 
 def text_to_speech_with_google(text, voice_name=DEFAULT_VOICE_NAME, audio_encoding=DEFAULT_AUDIO_ENCODING):
     try:
@@ -25,7 +24,8 @@ def text_to_speech_with_google(text, voice_name=DEFAULT_VOICE_NAME, audio_encodi
         audio_config = texttospeech.AudioConfig(
             audio_encoding=texttospeech.AudioEncoding[audio_encoding],
             sample_rate_hertz=24000,
-            speaking_rate=1.4
+            speaking_rate=1.3
+        )
 
         # Perform the text-to-speech request
         response = client.synthesize_speech(
@@ -49,16 +49,8 @@ def play_audio_stream(audio_content):
                     rate=24000,  # Google Cloud TTS returns audio at 24000 Hz
                     output=True)
 
-    # Stream the audio content with the ability to stop playback on key press
-    chunk_size = 1024
-    start = 0
-    while start < len(audio_content):
-        end = start + chunk_size
-        stream.write(audio_content[start:end])
-        start = end
-        if keyboard.is_pressed('q'):  # 'q' is the key to stop the audio playback
-            print("Audio playback interrupted.")
-            break
+    # Stream the audio content
+    stream.write(audio_content)
 
     # Close the stream
     stream.stop_stream()
