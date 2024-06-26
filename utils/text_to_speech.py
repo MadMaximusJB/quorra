@@ -26,6 +26,7 @@ def text_to_speech_with_google(text, voice_name=DEFAULT_VOICE_NAME, audio_encodi
             audio_encoding=texttospeech.AudioEncoding[audio_encoding],
             sample_rate_hertz=24000,
             speaking_rate=1.4
+        )
 
         # Perform the text-to-speech request
         response = client.synthesize_speech(
