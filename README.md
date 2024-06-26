@@ -1,6 +1,6 @@
 # quorra
 
-This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-Speech for advanced voice and text interaction. It features long-term memory by vectorizing conversations and recalling relevant past interactions.
+This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-Speech for advanced voice and text interaction. It features internet search and image generation capabilities using a combination of OpenAI and Google services.
 
 ### Features
 
