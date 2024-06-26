@@ -7,7 +7,6 @@ This project is a custom voice assistant using GPT-4o and Google Cloud Text-to-S
 - Voice input with keyboard shortcut (F9)
 - Text processing using GPT-4o
 - Text-to-speech using Google Cloud Text-to-Speech (is currently free if you use Journey voices)
-- Immediate conversation history
 
 ### Prerequisites
 
